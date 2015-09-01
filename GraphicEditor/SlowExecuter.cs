@@ -8,6 +8,7 @@ using System.Windows.Threading;
 
 namespace GraphicEditor
 {
+    //Класс, отвечающий за выполнение операций в фоновом потоке
     public class SlowExecuter
     {
         DispatcherTimer disp;
@@ -22,7 +23,7 @@ namespace GraphicEditor
             this.method = myMethod;
         }
 
-
+        //Инициализация DispatcherTimer и подписка на событие Tick
         public void BeginExecute()
         {
             disp = new DispatcherTimer();
@@ -31,6 +32,7 @@ namespace GraphicEditor
             disp.Start();
         }
 
+        //Метод, который выполняет операцию в фоновом потоке
         void EndExecute(object sender, EventArgs e)
         {
             statusBar.Value++;

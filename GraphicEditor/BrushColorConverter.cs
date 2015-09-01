@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace GraphicEditor
 {
-    //Класс-конвертер, который используется для преобраз
+    //Класс-конвертер, который используется для преобразования цвета в объект типа SolidColorBrush
     class BrushColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

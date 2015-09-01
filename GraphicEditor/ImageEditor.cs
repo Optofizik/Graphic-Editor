@@ -14,7 +14,7 @@ using System.Windows.Threading;
 namespace GraphicEditor
 {
 
-
+    //Класс, отвечающий за преобразование изображения: поворот, отражение, инвертирование цветов
     public class ImageEditor
     {
         private enum RotateIteration { None, First, Second, Third }
@@ -29,6 +29,7 @@ namespace GraphicEditor
             this.rotationState = RotateIteration.None;
         }
 
+        //Метод, который инвертирует цвета холста
         public void InvertColors(object sender, EventArgs e)
         {
             Color scb = ((SolidColorBrush)surface.Background).Color;
@@ -40,6 +41,7 @@ namespace GraphicEditor
             }
         }
 
+        //Метод, который отвечает за зеркальное отражение, как по-вертикали, так и по-горизонтали
         public void MirrorReflection(object sender, EventArgs e)
         {
             double val;
@@ -77,6 +79,7 @@ namespace GraphicEditor
             }
         }
 
+        //Метод, который отвечает за поворот холста на 90, 180 градусов
         public void RotationTransform(object sender, EventArgs e)
         {
             bool is90 = (sender as MenuItem).Name == "rotation90";

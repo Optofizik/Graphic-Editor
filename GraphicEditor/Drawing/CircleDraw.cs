@@ -49,22 +49,9 @@ namespace GraphicEditor.Drawing
                 Point endPoint = e.GetPosition(Surface);
                 circle.Width = width = Math.Abs(endPoint.X - center.X);
                 circle.Height = height = Math.Abs(endPoint.Y - center.Y);
-                if (endPoint.X > center.X)
-                {
-                    InkCanvas.SetLeft(circle, center.X);
-                }
-                if (endPoint.X < center.X)
-                {
-                    InkCanvas.SetLeft(circle, center.X - width);
-                }
-                if (endPoint.Y > center.Y)
-                {
-                    InkCanvas.SetTop(circle, center.Y);
-                }
-                if (endPoint.Y < center.Y)
-                {
-                    InkCanvas.SetTop(circle, center.Y - height);
-                }
+
+                InkCanvas.SetLeft(circle, Math.Min(endPoint.X, center.X));
+                InkCanvas.SetTop(circle, Math.Min(endPoint.Y, center.Y));
             }
         }
 
